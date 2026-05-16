@@ -1,0 +1,202 @@
+/* CSS Variables for Advanced Theming */
+:root {
+    --bg-color: #fafafa;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent: #2563eb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --hover-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-color: #0b0f19;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent: #3b82f6;
+    --card-bg: #111827;
+    --border-color: #1f2937;
+    --hover-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    /* Smooth transition for theme switching */
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-primary); 
+    line-height: 1.7; 
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation (Glassmorphism Effect) */
+.navbar { 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(var(--bg-color), 0.75); 
+    border-bottom: 1px solid var(--border-color); 
+    z-index: 1000; 
+}
+
+.nav-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 22px; 
+    font-weight: 600; 
+    letter-spacing: 1.5px; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 35px; 
+    list-style: none; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-secondary); 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--accent); }
+.theme-btn { background: none; border: none; font-size: 20px; cursor: pointer; transition: transform 0.3s ease; }
+.theme-btn:hover { transform: scale(1.1); }
+
+/* Main Content Layout */
+main { max-width: 1100px; margin: 140px auto 0; padding: 0 20px; }
+
+/* Hero Section */
+.hero { max-width: 850px; margin-bottom: 120px; }
+.hero-greeting { font-size: 15px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 12px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: 3.8rem; line-height: 1.15; margin-bottom: 24px; color: var(--text-primary); }
+.accent-text { color: var(--accent); font-style: italic; }
+.hero-description { font-size: 17px; color: var(--text-secondary); margin-bottom: 35px; max-width: 750px; }
+
+/* Button & Contact Card */
+.primary-btn { 
+    padding: 14px 30px; 
+    background-color: var(--text-primary); 
+    color: var(--bg-color); 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 15px; 
+    font-weight: 500;
+    cursor: pointer; 
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.primary-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.contact-card { 
+    margin-top: 25px; 
+    padding: 24px; 
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    max-width: 450px; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.hidden { display: none; }
+
+/* Section Titles */
+.section-title { 
+    font-size: 13px; 
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    color: var(--text-secondary); 
+    margin-bottom: 40px; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 12px; 
+}
+
+/* Experience List */
+.experience-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 100px; }
+.exp-card { 
+    padding: 28px; 
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 10px; 
+    border-left: 4px solid var(--accent); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.exp-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--hover-shadow);
+}
+.exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.exp-header h3 { font-size: 20px; font-weight: 600; }
+.exp-date { font-size: 14px; font-weight: 500; color: var(--accent); }
+.exp-card h4 { font-size: 16px; font-weight: 400; color: var(--text-secondary); margin-bottom: 16px; }
+.exp-card ul { margin-left: 20px; color: var(--text-secondary); font-size: 15px; }
+.exp-card ul li { margin-bottom: 6px; }
+
+/* Projects Grid */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 80px; }
+.project-card { 
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.project-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: var(--hover-shadow);
+}
+.project-content { padding: 28px; }
+.project-content h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+.project-content p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+
+/* Skills Tags */
+.skills-container { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 100px; }
+.tech-tag { 
+    display: inline-block; 
+    padding: 8px 16px; 
+    background-color: rgba(37, 99, 235, 0.08); 
+    color: var(--accent); 
+    border-radius: 30px; 
+    font-size: 13px; 
+    font-weight: 600; 
+    transition: background-color 0.3s ease;
+}
+.tech-tag:hover { background-color: rgba(37, 99, 235, 0.15); }
+
+footer { text-align: center; padding: 40px; color: var(--text-secondary); font-size: 14px; border-top: 1px solid var(--border-color); }
+
+/* --- ANIMATION CLASSES --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .nav-links { display: none; }
+    .exp-header { flex-direction: column; align-items: flex-start; gap: 5px; }
+}

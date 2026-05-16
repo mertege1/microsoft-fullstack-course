@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mert Ege Cetinkaya | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="logo">M.E.C.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero reveal">
+            <p class="hero-greeting">Hello, I am</p>
+            <h1 class="hero-title">Mert Ege Cetinkaya<br><span class="accent-text">Software Engineer</span></h1>
+            <p class="hero-description">
+                As a Computer Engineering student at Yildiz Technical University (GPA: 3.21), I specialize in AI, NLP, and full-stack development. Combining the engineering discipline acquired at institutions like BAYKAR and ASELSAN with modern technologies (Spring Boot, Flutter, React, BERT), I build highly scalable and robust systems.
+            </p>
+            <button class="primary-btn" id="contactRevealBtn">View Contact Info</button>
+            
+            <div id="contactInfo" class="contact-card hidden">
+                <p><strong>Location:</strong> Ankara / Istanbul, Turkey</p>
+                <p><strong>Email:</strong> cetinkayamertege@gmail.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/mert-ege-cetinkaya</p>
+            </div>
+        </section>
+
+        <section id="experience" class="projects-section">
+            <h2 class="section-title reveal">Professional Experience</h2>
+            
+            <div class="experience-list">
+                <article class="exp-card reveal">
+                    <div class="exp-header">
+                        <h3>BAYKAR Technologies</h3>
+                        <span class="exp-date">Jun - Aug 2025</span>
+                    </div>
+                    <h4>Intern - Human-Machine Interactive Software Technologies</h4>
+                    <ul>
+                        <li>Developed full-stack and cross-platform applications using Flutter SDK and C++.</li>
+                        <li>Implemented FFI (Foreign Function Interface), UDP communication, and various Flutter UI packages.</li>
+                    </ul>
+                </article>
+
+                <article class="exp-card reveal">
+                    <div class="exp-header">
+                        <h3>BAYKAR Technologies</h3>
+                        <span class="exp-date">Feb - May 2025</span>
+                    </div>
+                    <h4>Intern - Artificial Intelligence Software Development</h4>
+                    <ul>
+                        <li>Actively integrated image enhancement algorithms and literature innovations into ongoing projects.</li>
+                        <li>Took an active role in the data creation and labeling processes required for computer vision models.</li>
+                    </ul>
+                </article>
+
+                <article class="exp-card reveal">
+                    <div class="exp-header">
+                        <h3>ASELSAN, UGES Sector Presidency</h3>
+                        <span class="exp-date">Aug - Sep 2024</span>
+                    </div>
+                    <h4>Intern - Sensor Tracking System Project</h4>
+                    <ul>
+                        <li>Developed back-end architecture using C# and .NET framework.</li>
+                        <li>Ensured real-time data streaming utilizing Spring Boot framework and Apache Kafka.</li>
+                        <li>Designed and implemented the user interface (UI) on the front-end using React.js.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2 class="section-title reveal">Academic & Personal Projects</h2>
+            
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <div class="project-content">
+                        <h3>Sentiment Analysis from Text Data</h3>
+                        <p>Performed fine-tuning operations using BERT and DistilBERT models. Pulled data via APIs, pre-processed datasets for analysis, applied fine-tuned models, and evaluated the output results.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-content">
+                        <h3>Topic Modeling on Mental Health Data</h3>
+                        <p>Conducted topic modeling and sentiment analysis on various datasets using BERT and BERTopic. Analyzed the correlation between extracted themes and emotional tones using Chi-square tests.</p>
+                        <span class="tech-tag">BERTopic</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                </article>
+            </div>
+
+            <h2 class="section-title reveal" style="margin-top: 60px;">Tech Stack & Skills</h2>
+            <div class="skills-container reveal">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">C++ / C#</span>
+                <span class="tech-tag">JavaScript / HTML / CSS</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">.NET</span>
+                <span class="tech-tag">Apache Kafka</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Git</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mert Ege Cetinkaya. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
