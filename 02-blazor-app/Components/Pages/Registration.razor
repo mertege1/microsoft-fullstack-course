@@ -1,0 +1,67 @@
+@page "/register/{EventId:int}"
+@rendermode InteractiveServer
+@using _02_blazor_app.Models
+@using _02_blazor_app.Services
+@inject EventStateService StateService
+@inject NavigationManager NavManager
+
+<div class="registration-container">
+    <div class="registration-card">
+        <h2>Event Registration</h2>
+        @if (TargetEvent != null)
+        {
+            <p class="event-subtitle">You are registering for <strong>@TargetEvent.Title</strong></p>
+
+            @if (IsSuccess)
+            {
+                <div class="alert alert-success">Registration successful! Redirecting...</div>
+            }
+            else
+            {
+                <EditForm Model="@registrationModel" OnValidSubmit="HandleValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary class="validation-summary" />
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <InputText @bind-Value="registrationModel.Name" class="modern-input" placeholder="John Doe" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <InputText @bind-Value="registrationModel.Email" class="modern-input" type="email" placeholder="john@example.com" />
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width mt-3">Complete Registration</button>
+                </EditForm>
+            }
+        }
+        else
+        {
+            <div class="alert alert-danger">Event not found!</div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int EventId { get; set; }
+
+    private RegistrationModel registrationModel = new();
+    private EventModel? TargetEvent;
+    private bool IsSuccess = false;
+
+    protected override void OnInitialized()
+    {
+        TargetEvent = StateService.Events.FirstOrDefault(e => e.Id == EventId);
+        registrationModel.EventId = EventId;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        StateService.RegisterUser(registrationModel);
+        IsSuccess = true;
+        await Task.Delay(2000);
+        NavManager.NavigateTo("/attendance");
+    }
+}

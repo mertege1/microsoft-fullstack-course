@@ -1,0 +1,19 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using _02_blazor_app.Services
+@using _02_blazor_app.Components
+@inject EventStateService StateService
+
+<PageTitle>EventEase - Home</PageTitle>
+
+<div class="hero-section">
+    <h1>Discover Upcoming Events</h1>
+    <p>Secure your spot at the most exclusive tech events and meetups.</p>
+</div>
+
+<div class="events-grid">
+    @foreach (var ev in StateService.Events)
+    {
+        <EventCard Event="ev" />
+    }
+</div>

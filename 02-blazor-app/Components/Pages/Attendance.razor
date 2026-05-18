@@ -1,0 +1,59 @@
+@page "/attendance"
+@rendermode InteractiveServer
+@using _02_blazor_app.Services
+@inject EventStateService StateService
+@implements IDisposable
+
+<PageTitle>EventEase - Attendance</PageTitle>
+
+<div class="attendance-container">
+    <div class="header-section">
+        <h2>Live Attendance Tracker</h2>
+        <p>Monitor real-time registrations across all events.</p>
+    </div>
+
+    @if (StateService.Attendances.Any())
+    {
+        <div class="table-responsive">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Participant Name</th>
+                        <th>Email Address</th>
+                        <th>Registered Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var attendance in StateService.Attendances)
+                    {
+                        var ev = StateService.Events.FirstOrDefault(e => e.Id == attendance.EventId);
+                        <tr>
+                            <td>@attendance.Name</td>
+                            <td class="text-muted">@attendance.Email</td>
+                            <td><span class="badge">@(ev?.Title ?? "Unknown")</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <span class="bi bi-inbox empty-icon"></span>
+            <p>No registrations have been made yet.</p>
+        </div>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateService.OnStateChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        StateService.OnStateChanged -= StateHasChanged;
+    }
+}
