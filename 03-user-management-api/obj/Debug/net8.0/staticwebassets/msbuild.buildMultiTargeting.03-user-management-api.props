@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/03-user-management-api.props" />
-</Project>
