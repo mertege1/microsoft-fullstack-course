@@ -6,6 +6,29 @@ This repository is the main portfolio directory where projects and technical ass
 
 ## 📂 Projects
 
+### Project 04: InventoryHub - Full-Stack Management Dashboard
+
+A comprehensive, 3-tier architecture application integrating a Blazor WebAssembly frontend with a .NET 8 Minimal API backend, utilizing Entity Framework Core and an SQLite database for persistent storage.
+
+<img width="600" alt="InventoryHub Demo" src="https://github.com/user-attachments/assets/0725707a-d54e-4b71-bebd-467c4bf46a5b" />
+
+* **Technologies Used:** C#, .NET 8, Blazor WebAssembly, Minimal API, Entity Framework Core, SQLite, Bootstrap 5.
+* **Key Features:**
+  * **Full CRUD Operations:** Seamlessly create, read, update, and delete inventory items in real-time.
+  * **State-Driven UI & Caching:** Optimistic UI updates utilizing Blazor's local state management to prevent unnecessary full-database fetches.
+  * **Live Search & Filtering:** Client-side real-time filtering mechanism without database round-trips.
+  * **Financial & Analytical Widgets:** Dynamic calculation of total inventory value and critical stock tracking.
+* **Source Code:** [📂 Go to Project Files](./04-inventory-hub)
+
+**How I Used Copilot for System Design & Integration**
+Throughout the development of InventoryHub, I utilized GitHub Copilot as an intelligent pair-programmer to accelerate architectural decisions and integrations:
+1. **Domain Models & EF Core:** Generated the initial `Product` class and `AppDbContext` bridge for SQLite integration.
+2. **RESTful Endpoints:** Scaffolded the Minimal API `GET`, `POST`, `PUT`, and `DELETE` routes, ensuring correct JSON serialization via `Results` methods.
+3. **Performance Optimization:** Guided Copilot to refine the `HttpClient` post-request logic on the frontend to solely fetch the newly added JSON object instead of reloading the entire dataset, maximizing bandwidth efficiency.
+4. **Debugging Razor Syntax:** Resolved `CS1525` lambda expression errors by prompting Copilot to extract inline UI logic into clean C# code-behind methods.
+
+---
+
 ### Project 03: User Management API (ASP.NET Core)
 
 This project is a RESTful API built with ASP.NET Core Minimal APIs. It features robust architecture including Custom Middleware for global exception handling and performance logging, strictly typed endpoints (`TypedResults`), and built-in input validation.
@@ -25,6 +48,7 @@ I used GitHub Copilot Chat to debug the issue by pasting the error log. Copilot 
    <br><img width="500" alt="Terminal Log" src="https://github.com/user-attachments/assets/580f9755-a8fd-4615-be2d-5f655a017438" />
 3. **Resolution (Copilot Chat):** AI identifying the root cause and providing the solution.
    <br><img width="400" alt="Copilot Chat" src="https://github.com/user-attachments/assets/917765fe-e026-45a7-b1db-e15ebc83124a" />
+* **Source Code:** [📂 Go to Project Files](./03-user-management-api)
 
 ---
 
@@ -60,4 +84,4 @@ A personal website developed for the front-end fundamentals module of the traini
 You can use the link below to access HTML/CSS-based static projects directly via your browser:
 **[mertege1.github.io/microsoft-fullstack-course/](https://mertege1.github.io/microsoft-fullstack-course/)**
 
-*(Note: For interactive projects that require a background .NET server and an active SignalR connection, such as Blazor, you can access the source code directly from the respective folder links and review the application workflow from the preview GIFs above.)*
+*(Note: For interactive projects that require a background .NET server and an active SignalR connection/database, such as Blazor and Minimal APIs, you can access the source code directly from the respective folder links and review the application workflow from the preview GIFs above.)*

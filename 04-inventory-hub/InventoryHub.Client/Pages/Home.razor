@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<PageTitle>Home - InventoryHub</PageTitle>
+
+<div class="container mt-5">
+    <div class="p-5 text-center bg-light rounded-4 shadow-sm fade-in">
+        <h1 class="display-4 fw-bold text-primary mb-3">Welcome to InventoryHub</h1>
+        <p class="lead text-muted mb-4">
+            A modern, full-stack inventory management system powered by Blazor WebAssembly, .NET 8 Minimal APIs, and SQLite.
+        </p>
+        <hr class="my-4" style="max-width: 100px; margin: auto; border-top: 3px solid #0d6efd;" />
+        <p class="mt-4">
+            Navigate to the <strong>Inventory</strong> tab to start managing your products in real-time.
+        </p>
+        <a class="btn btn-primary btn-lg mt-3 px-5 rounded-pill shadow" href="inventory" role="button">
+            Go to Dashboard
+        </a>
+    </div>
+</div>
+
+<style>
+    .fade-in { animation: fadeIn 0.8s ease-in-out; }
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

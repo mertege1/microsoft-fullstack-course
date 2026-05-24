@@ -1,0 +1,46 @@
+@page "/about"
+
+<PageTitle>About - InventoryHub</PageTitle>
+
+<div class="container mt-5 fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-dark text-white p-4 text-center">
+                    <h2 class="fw-bold mb-0">About the Project</h2>
+                </div>
+                <div class="card-body p-5">
+                    <h4 class="fw-bold text-primary">InventoryHub </h4>
+                    <p class="text-muted mb-4">Version 1.0.0</p>
+                    
+                    <p class="lead">
+                        InventoryHub is a comprehensive full-stack application designed to demonstrate modern web architecture principles, including client-server real-time communication, state management, and optimized API integrations.
+                    </p>
+
+                    <h5 class="fw-bold mt-5 mb-3">Tech Stack</h5>
+                    <ul class="list-group list-group-flush mb-5">
+                        <li class="list-group-item bg-transparent px-0"><strong>Frontend:</strong> Blazor WebAssembly, Bootstrap 5</li>
+                        <li class="list-group-item bg-transparent px-0"><strong>Backend:</strong> .NET 8 Minimal API, C#</li>
+                        <li class="list-group-item bg-transparent px-0"><strong>Database:</strong> SQLite with Entity Framework Core</li>
+                        <li class="list-group-item bg-transparent px-0"><strong>AI Integration:</strong> Built with the assistance of GitHub Copilot</li>
+                    </ul>
+
+                    <div class="bg-light p-4 rounded-3 border-start border-4 border-primary">
+                        <h5 class="fw-bold">Developed By</h5>
+                        <p class="mb-0">
+                             <strong>Mert Ege Çetinkaya</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .fade-in { animation: fadeIn 0.6s ease-out; }
+    @@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>

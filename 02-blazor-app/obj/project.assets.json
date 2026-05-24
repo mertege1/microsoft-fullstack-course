@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ege/Desktop/ms-fullstack-course/02-blazor-app/02-blazor-app.csproj",
+      "projectUniqueName": "/Users/ege/Desktop/dev/ms-fullstack-course/02-blazor-app/02-blazor-app.csproj",
       "projectName": "02-blazor-app",
-      "projectPath": "/Users/ege/Desktop/ms-fullstack-course/02-blazor-app/02-blazor-app.csproj",
+      "projectPath": "/Users/ege/Desktop/dev/ms-fullstack-course/02-blazor-app/02-blazor-app.csproj",
       "packagesPath": "/Users/ege/.nuget/packages/",
-      "outputPath": "/Users/ege/Desktop/ms-fullstack-course/02-blazor-app/obj/",
+      "outputPath": "/Users/ege/Desktop/dev/ms-fullstack-course/02-blazor-app/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ege/.nuget/NuGet/NuGet.Config"
