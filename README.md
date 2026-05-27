@@ -4,8 +4,6 @@ This repository is the main portfolio directory where projects and technical ass
 
 ---
 
-## 📂 Projects
-
 ### Project 05: SafeVault Security API (Defense-in-Depth)
 
 A highly secure REST API demonstrating Defense-in-Depth strategies. This project focuses on implementing robust authentication, authorization, and data sanitization techniques to protect against common web vulnerabilities like XSS and SQL Injection, complete with automated integration tests.
@@ -16,13 +14,14 @@ A highly secure REST API demonstrating Defense-in-Depth strategies. This project
   * **Input Validation & SQLi Prevention:** Utilized strongly-typed models and Data Annotations (`[RegularExpression]`, `[StringLength]`) to instantly reject malicious inputs and prevent SQL Injection attacks.
   * **XSS Sanitization:** Integrated `HtmlEncoder.Default.Encode()` to neutralize dangerous HTML/JS payloads (Cross-Site Scripting) before they reach the data store.
   * **Automated Security Testing:** Built a side-by-side xUnit integration testing architecture to automatically verify 401 Unauthorized, 403 Forbidden, and 400 Bad Request responses.
-* **Source Code:** [📂 Go to Project Files](./05-safevault-security)
 
-**How I Used Copilot for Security & Testing**
-During the development of SafeVault, I utilized GitHub Copilot to enforce security best practices:
-1. **Security Boilerplates:** Generated the foundational code for secure Minimal API endpoints and JWT TokenValidationParameters configurations.
-2. **Regex Validation:** Assisted in creating strict and correct Regular Expression patterns for input validation to allow only alphanumeric characters.
-3. **Integration Testing Architecture:** Helped structure the `WebApplicationFactory` setup and debugged complex nested-project reference issues, ensuring the xUnit tests correctly verified the RBAC policies and HTTP status codes.
+---
+
+#### 🛡️ Engineering Architecture: Defense-in-Depth Security Pipeline
+
+Below is a flowchart visualizing how an HTTP request is validated through the API's multiple security layers. It clearly illustrates the decision points for JWT authentication, RBAC authorization, and input sanitization, along with the corresponding HTTP status code responses (401, 403, 400, or 201).
+
+<img width="800" alt="SafeVault Security Pipeline" src="https://github.com/user-attachments/assets/2242a263-165c-45a1-b306-49e7513ad2ea" />
 
 ---
 
