@@ -17,7 +17,7 @@ A highly secure REST API demonstrating Defense-in-Depth strategies. This project
 
 ---
 
-#### 🛡️ Engineering Architecture: Defense-in-Depth Security Pipeline
+#### Engineering Architecture: Defense-in-Depth Security Pipeline
 
 Below is a flowchart visualizing how an HTTP request is validated through the API's multiple security layers. It clearly illustrates the decision points for JWT authentication, RBAC authorization, and input sanitization, along with the corresponding HTTP status code responses (401, 403, 400, or 201).
 
